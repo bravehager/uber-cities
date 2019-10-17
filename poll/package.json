@@ -1,0 +1,17 @@
+{
+  "name": "poll",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Brave Hager",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "geolib": "^3.0.4",
+    "mongodb": "^3.3.3",
+    "puppeteer": "^1.20.0"
+  }
+}
