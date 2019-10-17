@@ -97,9 +97,7 @@ const connectToMongo = uri => {
 
 async function run(addresses, routes, directions) {
   const session = await puppeteer.launch({
-    headless: !DEBUG,
-    executablePath:
-      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    headless: !DEBUG
   });
   const page = await session.newPage();
   let distance = -Infinity;
@@ -180,6 +178,7 @@ async function main() {
   const addresses = db.collection("la");
   const routes = db.collection("routes");
   const directions = db.collection("directions");
+  addresses.ensureIndex({ HASH: 1 });
   directions.ensureIndex({ pickup: 1, destination: 1 }, { unique: true });
 
   while (true) {
